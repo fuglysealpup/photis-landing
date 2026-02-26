@@ -888,23 +888,12 @@
       return;
     }
 
-    // ── OPTION 1: Google Forms (recommended, free) ──
-    // Replace YOUR_FORM_ID and YOUR_FIELD_ID below with your actual Google Form values.
-    // To find these: create a Google Form with one email field, click "Get pre-filled link",
-    // fill in a dummy email, click "Get link". The URL will contain the form ID and field ID.
-    //
-    // fetch('https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse', {
-    //   method: 'POST',
-    //   mode: 'no-cors',
-    //   headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    //   body: 'entry.YOUR_FIELD_ID=' + encodeURIComponent(email)
-    // });
-
-    // ── OPTION 2: Mailto fallback (works immediately, no setup) ──
-    const mailtoLink = 'mailto:yuann@sealai.org?subject=' + 
-      encodeURIComponent('Photis beta signup') + 
-      '&body=' + encodeURIComponent('Please add me to the Photis mailing list: ' + email);
-    window.open(mailtoLink, '_blank');
+    fetch('https://docs.google.com/forms/d/e/1FAIpQLScrAg_cFDPChKizyw82hNXLDcoeBjs8fhlWu2eNlavl20lRVQ/formResponse', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: 'entry.263067527=' + encodeURIComponent(email)
+    });
 
     // Show success state
     form.style.display = 'none';
