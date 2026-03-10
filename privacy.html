@@ -74,7 +74,7 @@
   <a href="/" class="back-link">← Back to Photis</a>
 
   <h1>Privacy Policy</h1>
-  <p class="last-updated">Last updated: February 16, 2026</p>
+  <p class="last-updated">Last updated: March 9, 2026</p>
 
   <p>Photis ("we," "our," or "the app") is a gratitude journaling app built by SealAI. We take your privacy seriously. This policy explains what data we collect, how we use it, and how you can control it.</p>
 
@@ -88,23 +88,25 @@
 
   <p><strong>AI-generated metadata.</strong> Our AI analyzes your entries to extract emotions, themes, tags, entities (people, places, things mentioned), key points, and sentiment scores. This metadata is stored alongside your entries.</p>
 
-  <p><strong>Health data.</strong> If you opt in via Settings, we read heart rate variability (HRV), resting heart rate, and sleep data from Apple HealthKit. This data is stored locally on your device in the app's database. Health data is not sent to our servers or any third party.</p>
+  <p><strong>Health data.</strong> If you opt in via Settings, we read the following data from Apple HealthKit: heart rate variability (HRV), resting heart rate, heart rate, sleep analysis, active energy, and step count. This data is stored locally on your device only and is never sent to our servers or any third party. We also write mindful session records to Apple Health when you complete a journal entry, so your reflection practice appears alongside your other wellness data. All HealthKit integration is entirely opt-in and can be disabled at any time in Settings.</p>
+
+  <p><strong>AI-powered prompts.</strong> To generate personalized reflection prompts, we send excerpts from your recent journal entries (up to 200 characters each), along with your most frequent tags, entities, and dominant emotion, to OpenAI's GPT-4o API. This data is processed in accordance with OpenAI's API data usage policy and is not used to train their models.</p>
 
   <p><strong>Error logs.</strong> If the app encounters an error, we log diagnostic information (error message, context, and your email) to help us fix bugs during the beta period.</p>
 
   <h2>How we use your data</h2>
 
-  <p>Your journal entries and voice recordings are sent to OpenAI's GPT-4o API for transcription, analysis, and insight generation. OpenAI processes this data according to their <a href="https://openai.com/policies/api-data-usage-policies" target="_blank">API data usage policy</a>, which states that API inputs and outputs are not used to train their models.</p>
+  <p>Your journal entries and voice recordings are sent to OpenAI's GPT-4o API for transcription, analysis, and insight generation. Excerpts from your entries are also used to generate personalized prompts. OpenAI processes this data according to their <a href="https://openai.com/policies/api-data-usage-policies" target="_blank">API data usage policy</a>, which states that API inputs and outputs are not used to train their models.</p>
 
-  <p>We use your data to provide the core app functionality: storing your entries, generating AI insights, syncing across devices, and (if opted in) reading health data for future correlation features. We do not sell your data to anyone. We do not use your data for advertising.</p>
+  <p>We use your data to provide the core app functionality: storing your entries, generating AI insights, syncing across devices, generating personalized prompts, and (if opted in) reading health data to surface correlations between your gratitude practice and your physical wellbeing. We do not sell your data to anyone. We do not use your data for advertising.</p>
 
   <h2>Where your data is stored</h2>
 
   <p><strong>On your device.</strong> All journal entries, health data, and preferences are stored locally using an on-device database (WatermelonDB/SQLite). The app works fully offline.</p>
 
-  <p><strong>In the cloud.</strong> Journal entries and account information are synced to Supabase (hosted on AWS). Access is restricted so that only you can read your own entries.</p>
+  <p><strong>In the cloud.</strong> Journal entries and account information are synced to Supabase (hosted on AWS). Access is restricted so that only you can read your own entries. Health data is never uploaded to the cloud.</p>
 
-  <p><strong>Third-party processing.</strong> Voice audio and entry text are sent to OpenAI's API for AI analysis. We do not send health data to any third party.</p>
+  <p><strong>Third-party processing.</strong> Voice audio, entry text, and entry excerpts are sent to OpenAI's API for AI analysis and personalized prompt generation. We do not send health data to any third party.</p>
 
   <h2>Your rights and controls</h2>
 
@@ -112,11 +114,11 @@
 
   <p><strong>Delete your account.</strong> You can permanently delete all of your data (both cloud and local) from Settings → Delete Account. This action is immediate and irreversible.</p>
 
-  <p><strong>Health data.</strong> Apple HealthKit integration is entirely opt-in. You can enable or disable it at any time in Settings. When disabled, no health data is read or stored.</p>
+  <p><strong>Health data.</strong> Apple HealthKit integration is entirely opt-in. You can enable or disable it at any time in Settings. When disabled, no health data is read or stored. You can also revoke HealthKit permissions at any time from iOS Settings → Health → Data Access & Devices.</p>
 
   <h2>Data security</h2>
 
-  <p>Data is encrypted in transit using HTTPS/TLS. Our cloud database uses Supabase's row-level security, ensuring only authenticated users can access their own data. We do not store voice recordings on our servers — audio is processed and immediately deleted from your device.</p>
+  <p>Data is encrypted in transit using HTTPS/TLS. Our cloud database uses Supabase's row-level security, ensuring only authenticated users can access their own data. We do not store voice recordings on our servers — audio is processed and immediately deleted from your device. Health data never leaves your device.</p>
 
   <h2>Children's privacy</h2>
 
