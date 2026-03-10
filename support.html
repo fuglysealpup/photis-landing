@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photis — Support</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --warm-cream: #FBF7F0;
+    --soft-terracotta: #C67B4E;
+    --warm-sand: #E8D5C0;
+    --deep-forest: #2D3B2D;
+    --sage: #7A8B6F;
+    --text-primary: #2A2118;
+    --text-secondary: #6B5D4F;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--warm-cream);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.7;
+  }
+
+  /* Grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: rgba(251, 247, 240, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(200, 185, 165, 0.2);
+  }
+
+  .logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: var(--deep-forest);
+    letter-spacing: -0.5px;
+    text-decoration: none;
+  }
+
+  .logo span { color: var(--soft-terracotta); }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 120px 24px 80px;
+  }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: 56px;
+    font-weight: 300;
+  }
+
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    margin-top: 48px;
+    margin-bottom: 20px;
+    letter-spacing: -0.3px;
+  }
+
+  .faq-item {
+    background: rgba(255,255,255,0.5);
+    border: 1px solid var(--warm-sand);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 12px;
+  }
+
+  .faq-question {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+  }
+
+  .faq-answer {
+    font-size: 15px;
+    color: var(--text-secondary);
+    font-weight: 300;
+    margin: 0;
+  }
+
+  .faq-answer a {
+    color: var(--soft-terracotta);
+    text-decoration: none;
+  }
+
+  .faq-answer a:hover { text-decoration: underline; }
+
+  .contact-box {
+    background: var(--deep-forest);
+    border-radius: 16px;
+    padding: 32px;
+    margin-top: 48px;
+    text-align: center;
+  }
+
+  .contact-box h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 24px;
+    color: var(--warm-cream);
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+
+  .contact-box p {
+    font-size: 15px;
+    color: rgba(251, 247, 240, 0.7);
+    font-weight: 300;
+    margin-bottom: 24px;
+  }
+
+  .contact-button {
+    display: inline-block;
+    background: var(--soft-terracotta);
+    color: var(--warm-cream);
+    padding: 12px 28px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: opacity 0.2s ease;
+  }
+
+  .contact-button:hover { opacity: 0.85; }
+
+  .contact-email {
+    display: block;
+    margin-top: 16px;
+    font-size: 14px;
+    color: rgba(251, 247, 240, 0.5);
+    font-weight: 300;
+  }
+
+  .contact-email a {
+    color: rgba(251, 247, 240, 0.7);
+    text-decoration: underline;
+  }
+
+  .contact-email a:hover { color: var(--warm-cream); }
+
+  footer {
+    text-align: center;
+    padding: 40px 24px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 300;
+    border-top: 1px solid rgba(200, 185, 165, 0.3);
+    margin-top: 48px;
+  }
+
+  footer a {
+    color: var(--soft-terracotta);
+    text-decoration: none;
+  }
+
+  @media (max-width: 600px) {
+    nav { padding: 16px 20px; }
+    .container { padding: 100px 20px 60px; }
+    h1 { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">Photis<span>.</span></a>
+</nav>
+
+<div class="container">
+
+  <h1>Support</h1>
+  <p class="subtitle">We're here to help. Find answers below or reach out directly.</p>
+
+  <h2>Getting started</h2>
+
+  <div class="faq-item">
+    <p class="faq-question">How do I record a voice entry?</p>
+    <p class="faq-answer">Tap "+ New Entry" on the home screen, then tap the microphone button. Speak naturally — your words will transcribe in real time. Tap the stop button when you're done, then tap Save. Your entry will be analyzed automatically.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-question">Does the app work offline?</p>
+    <p class="faq-answer">Yes. You can record and save entries without an internet connection. Your entries will sync to the cloud automatically when you're back online. Note that AI analysis and personalized prompts require an internet connection.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-question">How do I sign in?</p>
+    <p class="faq-answer">Photis supports Sign in with Apple and Sign in with Google. You can sign in from the auth screen after completing onboarding. Signing in is optional — the app works fully without an account, but signing in lets you sync your entries across devices.</p>
+  </div>
+
+  <h2>Apple Health & wearables</h2>
+
+  <div class="faq-item">
+    <p class="faq-question">How do I connect Apple Health?</p>
+    <p class="faq-answer">Go to Settings in the app and tap "Connect Apple Health." You'll be prompted to grant permissions for the health data Photis reads (HRV, resting heart rate, sleep, steps, and active energy). You can also enable or disable this at any time in iOS Settings → Health → Data Access & Devices.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-question">My health data isn't syncing. What should I do?</p>
+    <p class="faq-answer">First, make sure your wearable app (Oura, Apple Watch, etc.) has synced recently and that data is visible in the iOS Health app. Then go to Photis Settings and tap "Sync Now." If the issue persists, try disabling and re-enabling the Apple Health toggle in Settings.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-question">When will I see health insights?</p>
+    <p class="faq-answer">Health insights appear after you've accumulated paired days — days where you both journaled and had health data sync. Your first insight unlocks at 5 paired days. Keep journaling and wearing your device and you'll get there naturally within a week or two.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-question">Is my health data sent anywhere?</p>
+    <p class="faq-answer">No. Your health data is stored locally on your device only and is never uploaded to our servers or shared with any third party. See our <a href="/privacy">Privacy Policy</a> for full details.</p>
+  </div>
+
+  <h2>Prompts & insights</h2>
+
+  <div class="faq-item">
+    <p class="faq-question">How do personalized prompts work?</p>
+    <p class="faq-answer">After 5 entries, Photis generates reflection prompts based on themes, people, and patterns from your own journal — not generic questions. Prompts refresh every few days. You can adjust the prompt style (light, moderate, or deep) or turn them off entirely in Settings.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-question">Can I turn off prompts?</p>
+    <p class="faq-answer">Yes. Go to Settings and toggle "Show prompts" off. You can turn them back on at any time.</p>
+  </div>
+
+  <h2>Your data</h2>
+
+  <div class="faq-item">
+    <p class="faq-question">How do I export my data?</p>
+    <p class="faq-answer">Go to Settings → Export My Data. Your entries will be exported as a JSON file that you can save or share.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-question">How do I delete my account?</p>
+    <p class="faq-answer">Go to Settings → Delete Account. This permanently deletes all your data from both your device and our servers. This action cannot be undone.</p>
+  </div>
+
+  <div class="faq-item">
+    <p class="faq-question">Where is my data stored?</p>
+    <p class="faq-answer">Journal entries are stored locally on your device and synced to our cloud database (Supabase, hosted on AWS) if you're signed in. Health data is stored locally only and never uploaded. See our <a href="/privacy">Privacy Policy</a> for full details.</p>
+  </div>
+
+  <div class="contact-box">
+    <h2>Still need help?</h2>
+    <p>Can't find what you're looking for? Send us a message and we'll get back to you as soon as possible.</p>
+    <a href="https://docs.google.com/forms/d/13JvhbSN43mTndUU_435VPKqBnlGHtsx6F1SLhwo4Na4/viewform" class="contact-button">Contact Support</a>
+    <span class="contact-email">Or email us directly at <a href="mailto:yuann@sealai.org">yuann@sealai.org</a></span>
+  </div>
+
+</div>
+
+<footer>
+  <p>Photis · Made with care by <a href="mailto:yuann@sealai.org">SealAI</a> · <a href="/">Back to Photis</a></p>
+</footer>
+
+</body>
+</html>
